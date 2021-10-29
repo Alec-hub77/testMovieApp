@@ -1,4 +1,5 @@
 @import '../../scss/variables';
+@import '../../scss/breakpoint';
 
 .register {
   width: 100vw;
@@ -21,7 +22,7 @@
 
     form {
       width: 365px;
-      height: 380px;
+      min-height: 380px;
       padding: 30px;
       border-radius: 5px;
       background-color: #000;
@@ -31,6 +32,16 @@
       -webkit-box-shadow: 0px 0px 11px 12px rgba(221, 0, 0, 0.4);
       -moz-box-shadow: 0px 0px 11px 12px rgba(221, 0, 0, 0.4);
       box-shadow: 0px 0px 11px 12px rgba(221, 0, 0, 0.4);
+      position: relative;
+
+      .PasswordChecklist {
+        font-size: 12px;
+        margin-top: 10px;
+
+        span {
+          margin: 3px;
+        }
+      }
 
       input {
         height: 40px;
@@ -38,7 +49,6 @@
         background-color: lightgray;
         padding-left: 10px;
         margin: 5px 0;
-        
       }
 
       .loginBtn {
@@ -76,6 +86,21 @@
           margin-right: 5px;
         }
       }
+
+      @include mobile {
+
+        .PasswordChecklist {
+          display: none;
+        }
+      }
+
+      @include mobile-landscape {
+
+        .PasswordChecklist {
+          display: none;
+        }
+      }
+
     }
   }
 }

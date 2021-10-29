@@ -16,7 +16,7 @@ const Login = () => {
             pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{6,}$"
             required
           />
-          <button className="loginBtn">Log In</button>
+          <button className="loginBtn">Sign In</button>
           <span>
             New to Cinema Club ?{' '}
             <b>

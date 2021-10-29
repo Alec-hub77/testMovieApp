@@ -2,8 +2,11 @@ import React from 'react';
 import './register.scss';
 import {Link} from 'react-router-dom'
 import { BsFillArrowLeftCircleFill } from 'react-icons/bs';
+import PasswordChecklist from "react-password-checklist"
 
 const Register = () => {
+  const [password, setPassword] = React.useState("")
+ 
   return (
     <div className="register">
       <div className="container">
@@ -14,10 +17,18 @@ const Register = () => {
           <input
             type="password"
             placeholder="Password"
-            pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{6,}$"
+            pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{6,20}$"
             required
+            onChange={e => setPassword(e.target.value)}
           />
           <button className="loginBtn">Create an account</button>
+          <PasswordChecklist
+            className="PasswordChecklist"
+            rules={["minLength","specialChar","number","capital"]}
+            minLength={6}
+            value={password}
+            onChange={(isValid) => {}}
+			/>
           <span>
             Already have an account?{' '}
             <b>
