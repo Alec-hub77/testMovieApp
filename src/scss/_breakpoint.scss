@@ -1,0 +1,19 @@
+@use "./variables" as *;
+
+@mixin mobile {
+    @media only screen and (max-width: 600px) {
+        @content;
+    }
+}
+
+@mixin mobile-landscape {
+    @media (orientation: landscape) and (max-width: 667px) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media only screen and (max-width: 1024px) {
+        @content;
+    }
+}
