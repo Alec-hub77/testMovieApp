@@ -1,6 +1,6 @@
 import "./App.scss";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-import { Welcome, Home, Login } from "./pages";
+import { Welcome, Home, Login, Register } from "./pages";
 
 function App() {
   return (
@@ -15,6 +15,9 @@ function App() {
           </Route>
           <Route path="/login">
             <Login />
+          </Route>
+          <Route path="/register">
+            <Register />
           </Route>
         </Switch>
       </BrowserRouter>

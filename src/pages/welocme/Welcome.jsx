@@ -13,9 +13,9 @@ const Welcome = () => {
             <div className="buttons__container">
                
                 <h1>Welcome to Cinema Club</h1>
-                <button><Link to="/login">LOG IN</Link></button>
-                <button>SING IN</button>
-                <button><Link to="/home">BROWSE THE WEBSITE</Link></button>
+                <Link to="/login"><button>LOG IN</button></Link>
+                <Link to="/register"><button>SIGN IN</button></Link>
+                <Link to="/home"><button>BROWSE THE WEBSITE</button></Link>
             </div>
         </div>
     )

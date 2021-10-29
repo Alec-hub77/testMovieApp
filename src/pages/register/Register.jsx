@@ -1,26 +1,27 @@
 import React from 'react';
-import './login.scss';
-import {Link} from 'react-router-dom';
+import './register.scss';
+import {Link} from 'react-router-dom'
 import { BsFillArrowLeftCircleFill } from 'react-icons/bs';
 
-const Login = () => {
+const Register = () => {
   return (
-    <div className="login">
+    <div className="register">
       <div className="container">
         <form>
-          <h1>Sign In</h1>
+          <h1>Sign Up</h1>
           <input type="email" placeholder="Email" required />
+          <input type="text" placeholder="Name" required />
           <input
             type="password"
             placeholder="Password"
             pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{6,}$"
             required
           />
-          <button className="loginBtn">Log In</button>
+          <button className="loginBtn">Create an account</button>
           <span>
-            New to Cinema Club ?{' '}
+            Already have an account?{' '}
             <b>
-              <Link to="/register">Sign up now.</Link>
+              <Link to="/login">Log in</Link>
             </b>
           </span>
           <small>
@@ -34,4 +35,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Register;

@@ -1,6 +1,6 @@
 @import '../../scss/variables';
 
-.login {
+.register {
   width: 100vw;
   height: 100vh;
   background-image: url('../../img/footer-bg.jpg');
@@ -21,7 +21,7 @@
 
     form {
       width: 365px;
-      height: 350px;
+      height: 380px;
       padding: 30px;
       border-radius: 5px;
       background-color: #000;
@@ -38,6 +38,7 @@
         background-color: lightgray;
         padding-left: 10px;
         margin: 5px 0;
+        
       }
 
       .loginBtn {
