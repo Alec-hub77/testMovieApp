@@ -1,14 +1,17 @@
 import "./App.scss";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 import { Welcome, Home, Login, Register } from "./pages";
 
 function App() {
+
+  const user = JSON.parse(localStorage.getItem('user'))
+  console.log(user)
   return (
     <div className="App">
       <BrowserRouter>
-        <Switch>
+        <Switch> 
           <Route path="/" exact>
-            <Welcome />
+          { user ? <Redirect to="/home"/> : <Welcome/>}
           </Route>
           <Route path="/home">
             <Home />
