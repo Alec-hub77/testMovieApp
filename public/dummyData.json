@@ -4,20 +4,20 @@
         "title": "Superman: Man of Steel",
         "rating": 8.5,
         "plot": "Lorem Ipsum is simply dummy text of the printing and typesetting industry",
-        "img": "../../img/banner-1.jpg"
+        "img": "https://akthemes.com/video/images/slider/banner-1.jpg"
     },
     {
         "id": 2,
         "title": "Deadpool: No Good Deed",
         "rating": 8.7,
         "plot": "Lorem Ipsum is simply dummy text of the printing and typesetting industry",
-        "img": "../../img/banner-2.jpg"
+        "img": "https://akthemes.com/video/images/slider/banner-2.jpg"
     },
     {
         "id": 3,
         "title": "Avengers: Endgame",
         "rating": 7.3,
         "plot": "Lorem Ipsum is simply dummy text of the printing and typesetting industry",
-        "img": "../../img/banner-3.jpg"
+        "img": "https://akthemes.com/video/images/slider/banner-3.png"
     }
 ]

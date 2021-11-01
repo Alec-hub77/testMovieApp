@@ -4,7 +4,8 @@ import axios from 'axios'
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation } from "swiper";
 import "swiper/swiper.min.css";
-import "swiper/swiper-bundle.min";
+import "swiper/swiper-bundle.min.css";
+import "swiper/components/pagination/pagination.min.css";
 
 
 const Slider = () => {
@@ -27,11 +28,11 @@ const Slider = () => {
       >
         {sliderData.map(slider => (
           <SwiperSlide>
-          <div style={{background: "url" + (`${slider.img}`)}} className="banner">
+          <div style={{background: "url" + `(${slider.img})`+"center no-repeat"}} className="banner">
             <div className="textContainer">
               <h1>{slider.title}</h1>
               <h4>Rating:</h4>
-              <span>{slider.retaing}</span>
+              <span className="rating">{slider.rating}</span>
               <p>
                 {slider.plot}
               </p>
