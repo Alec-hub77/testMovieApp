@@ -3,10 +3,11 @@ import "./slider.scss";
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination } from "swiper";
+import { Pagination, Autoplay } from "swiper";
 import "swiper/swiper.min.css";
 import "swiper/swiper-bundle.min.css";
 import "swiper/components/pagination/pagination.min.css";
+
 
 
 const Slider = () => {
@@ -15,13 +16,14 @@ const Slider = () => {
   React.useEffect(() => {
     axios.get('http://localhost:3000/dummyData.json').then(res => setSliderData(res.data))
   }, [])
-  console.log(sliderData)
+ 
   return (
     <div className="slider">
       <Swiper
-        modules={[Pagination]}
+        modules={[Pagination, Autoplay]}
         spaceBetween={0}
         slidesPerView={1}
+        autoplay={{ enabled: true ,delay: 3000 }}
         pagination={true}
         pagination={{ clickable: true, dynamicBullets: true, }}
         onSlideChange={() => console.log("slide change")}
