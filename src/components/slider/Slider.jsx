@@ -1,8 +1,9 @@
 import React from "react";
 import "./slider.scss";
 import axios from 'axios'
+import { Link } from 'react-router-dom'
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Navigation } from "swiper";
+import { Pagination } from "swiper";
 import "swiper/swiper.min.css";
 import "swiper/swiper-bundle.min.css";
 import "swiper/components/pagination/pagination.min.css";
@@ -18,17 +19,18 @@ const Slider = () => {
   return (
     <div className="slider">
       <Swiper
-        modules={[Pagination, Navigation]}
+        modules={[Pagination]}
         spaceBetween={0}
         slidesPerView={1}
-        navigation
+        pagination={true}
         pagination={{ clickable: true, dynamicBullets: true, }}
         onSlideChange={() => console.log("slide change")}
         onSwiper={(swiper) => console.log(swiper)}
       >
         {sliderData.map(slider => (
-          <SwiperSlide>
+          <SwiperSlide key={slider.id}>
           <div style={{background: "url" + `(${slider.img})`+"center no-repeat"}} className="banner">
+            <h1 className="welcome">Welcome to <span>Cinema Club</span></h1>
             <div className="textContainer">
               <h1>{slider.title}</h1>
               <h4>Rating:</h4>
@@ -36,55 +38,13 @@ const Slider = () => {
               <p>
                 {slider.plot}
               </p>
+            <Link to="/login"><button>Sign IN</button></Link>
+            <Link to="/register"><button>Sign UP</button></Link>
+            <Link to="/home"><button>Browse the site</button></Link>
             </div>
           </div>
         </SwiperSlide>
         ))}
-        <SwiperSlide>
-          <div className="banner banner-1">
-            <div className="textContainer">
-              <h1>Superman: Man of Steel</h1>
-              <h4>Rating:</h4>
-              <span>7.5</span>
-              <p>
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy
-                text ever since the 1500s, when an unknown printer took a galley
-                of type and scrambled it to make a type specimen book.
-              </p>
-            </div>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-        <div className="banner banner-2">
-            <div className="textContainer">
-              <h1>Superman: Man of Steel</h1>
-              <h4>Rating:</h4>
-              <span>7.5</span>
-              <p>
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy
-                text ever since the 1500s, when an unknown printer took a galley
-                of type and scrambled it to make a type specimen book.
-              </p>
-            </div>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-        <div className="banner banner-3">
-            <div className="textContainer">
-              <h1>Superman: Man of Steel</h1>
-              <h4>Rating:</h4>
-              <span>7.5</span>
-              <p>
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy
-                text ever since the 1500s, when an unknown printer took a galley
-                of type and scrambled it to make a type specimen book.
-              </p>
-            </div>
-          </div>
-        </SwiperSlide>
       </Swiper>
     </div>
   );

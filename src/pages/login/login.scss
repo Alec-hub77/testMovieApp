@@ -31,6 +31,7 @@
       -webkit-box-shadow: 0px 0px 11px 12px rgba(221, 0, 0, 0.4);
       -moz-box-shadow: 0px 0px 11px 12px rgba(221, 0, 0, 0.4);
       box-shadow: 0px 0px 11px 12px rgba(221, 0, 0, 0.4);
+      position: relative;
 
       input {
         height: 40px;
@@ -81,8 +82,8 @@
     .errMessage {
       margin-top: 5px;
       position: absolute;
-      left: 37%;
-      top: 30%;
+      left: 8%;
+      top: 2%;
     }
   }
 }
