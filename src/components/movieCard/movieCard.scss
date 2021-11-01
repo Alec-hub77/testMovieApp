@@ -20,8 +20,10 @@
 
       .card_top {
         display: flex;
+        align-items: start;
         width: 100%;
         background-color: teal;
+        height: 500px;
 
         .card_title {
           display: flex;
@@ -38,6 +40,10 @@
             font-size: 32px;
             cursor: pointer;
             flex: 1;
+
+            &:hover {
+                transform: scale(1.5);
+            }
           }
         }
       }
