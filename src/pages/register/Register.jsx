@@ -13,8 +13,7 @@ const Register = () => {
   const {data, setValues} = useData()
   
   const onSubmit = (data) => {
- 
-      history.push('/home')
+      history.push('/login')
       setValues(data)
   }
   const { register, handleSubmit} = useForm({

@@ -11,12 +11,10 @@ const Header = () => {
   };
   const history = useHistory();
 
-  console.log("rednder");
   const user = JSON.parse(localStorage.getItem("user"));
 
   const handleRemove = () => {
     localStorage.removeItem("user");
-    // document.location.reload();
     history.push("/");
   };
 
@@ -46,7 +44,9 @@ const Header = () => {
                 <Link to="/login">
                   <button>Log In</button>
                 </Link>
-                <button>Sign in</button>
+                <Link to="/register">
+                  <button>Sign up</button>
+                </Link>
               </>
             )}
           </div>

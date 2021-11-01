@@ -47,6 +47,20 @@
       .userName {
         color: red;
       }
+
+      button {
+        width: 70px;
+        margin: 0 10px;
+        padding: 5px;
+        border: 1px solid red;
+        background: transparent;
+        color: #fff;
+        cursor: pointer;
+
+        &:active {
+          transform: translateY(1px);
+        }
+      }
     }
   }
 }
