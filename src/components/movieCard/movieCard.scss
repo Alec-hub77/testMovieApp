@@ -4,7 +4,7 @@
 .card_container {
   background: url('../../img/body-bg.gif');
   width: 100%;
-  height: 100vh;
+  height: 100%;
 
   .card_wrapper {
     display: flex;
@@ -52,13 +52,13 @@
       .card_top {
         display: flex;
         width: 100%;
-        background-color: teal;
         height: 400px;
         align-items: start;
-        background: url('https://m.media-amazon.com/images/M/MV5BZDFiZTNiMmItMDk5ZC00OGZmLTk3NmItODM5ZWE2YWMzZjliXkEyXkFqcGdeQXVyOTMyOTQyNzA@._V1_SX300.jpg');
+        // background: url('https://m.media-amazon.com/images/M/MV5BZDFiZTNiMmItMDk5ZC00OGZmLTk3NmItODM5ZWE2YWMzZjliXkEyXkFqcGdeQXVyOTMyOTQyNzA@._V1_SX300.jpg');
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
+        
 
         .card_title {
           display: flex;
