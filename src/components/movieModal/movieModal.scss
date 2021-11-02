@@ -3,6 +3,12 @@
   height: 500px;
   background-color: #fff;
   margin: auto;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  top: 20%;
+  z-index: 99;
+  
 
   .movie_modal_top {
     display: flex;
@@ -81,6 +87,7 @@
 
   .movie_modal_bottom {
       padding: 10px;
+      text-align: left;
 
       .video_info {
           margin-bottom: 20px;

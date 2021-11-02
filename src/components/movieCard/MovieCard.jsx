@@ -1,13 +1,18 @@
-import React from "react";
-import "./movieCard.scss";
-import { BsFillInfoCircleFill } from "react-icons/bs";
+import React from 'react';
+import './movieCard.scss';
+import { BsFillInfoCircleFill } from 'react-icons/bs';
+import MovieModal from '../movieModal/MovieModal';
 
-const MovieCard = () => {
+const MovieCard = ({ data }) => {
+  const [showModal, setShowModal] = React.useState(false);
   return (
     <center className="card_container">
       <div className="card_wrapper">
-        <div className="card">
-          <div className="card_overlay"><BsFillInfoCircleFill /></div>
+        {showModal ? <MovieModal setShowModal={setShowModal} /> : null}
+        <div className="card" onClick={() => setShowModal(true)}>
+          <div className="card_overlay">
+            <BsFillInfoCircleFill />
+          </div>
           <div className="card_top">
             <div className="card_title">
               <h1 className="title">Battle of the Bastard</h1>
@@ -15,77 +20,13 @@ const MovieCard = () => {
           </div>
           <div className="card_bottom">
             <div className="card_info">
-              <span>Genre</span>
-              <span>Director</span>
-              <span>Year</span>
+              <ul>
+                <li>Action, comedy, drama</li>
+                <li>Action, comedy</li>
+                <li>2052</li>
+              </ul>
             </div>
           </div>
-        </div>
-        <div className="card">
-          <div className="card_top">
-            <div className="card_title">
-              <h1 className="title">Battle of the Bastard</h1>
-              <BsFillInfoCircleFill />
-            </div>
-          </div>
-          <div className="card_bottom">
-            <div className="card_info">
-              <span>Genre</span>
-              <span>Director</span>
-              <span>Year</span>
-            </div>
-          </div>
-        </div>
-        <div className="card">
-          <h1>Title</h1>
-        </div>
-        <div className="card">
-          <h1>Title</h1>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis
-            amet aspernatur nisi! A, obcaecati amet! Eius, maxime enim. Sed,
-            accusamus.
-          </p>
-        </div>
-        <div className="card">
-          <h1>Title</h1>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis
-            amet aspernatur nisi! A, obcaecati amet! Eius, maxime enim. Sed,
-            accusamus.
-          </p>
-        </div>
-        <div className="card">
-          <h1>Title</h1>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis
-            amet aspernatur nisi! A, obcaecati amet! Eius, maxime enim. Sed,
-            accusamus.
-          </p>
-        </div>
-        <div className="card">
-          <h1>Title</h1>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis
-            amet aspernatur nisi! A, obcaecati amet! Eius, maxime enim. Sed,
-            accusamus.
-          </p>
-        </div>
-        <div className="card">
-          <h1>Title</h1>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis
-            amet aspernatur nisi! A, obcaecati amet! Eius, maxime enim. Sed,
-            accusamus.
-          </p>
-        </div>
-        <div className="card">
-          <h1>Title</h1>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis
-            amet aspernatur nisi! A, obcaecati amet! Eius, maxime enim. Sed,
-            accusamus.
-          </p>
         </div>
       </div>
     </center>
