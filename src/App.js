@@ -5,7 +5,6 @@ import { Welcome, Home, Login, Register } from "./pages";
 function App() {
 
   const user = JSON.parse(localStorage.getItem('user'))
-  console.log(user)
   return (
     <div className="App">
       <BrowserRouter>

@@ -1,77 +1,46 @@
-import React from "react";
-import "./movieCard.scss";
-import { BsFillInfoCircleFill } from "react-icons/bs";
+import React from 'react';
+import './movieCard.scss';
+import { BsFillInfoCircleFill } from 'react-icons/bs';
+import MovieModal from '../movieModal/MovieModal';
+import ModalInfo from '../movieModal/ModalInfo'
 
-const MovieCard = () => {
+const MovieCard = ({ data }) => {
+  const [modalMovieData, setModalMovieData] = React.useState({});
+  const user = JSON.parse(localStorage.getItem('user'))
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
+  const handleOpenModal = (index) => {
+    handleOpen(true)
+    setModalMovieData(data[index])
+  }
+  console.log(user)
   return (
     <center className="card_container">
       <div className="card_wrapper">
-        <div className="card">
-          <div className="card_top">
+        {open ? <ModalInfo handleOpen={handleOpen} handleClose={handleClose} open={open} modalMovieData={modalMovieData} /> : null}
+        {data?.map((item, index) => (
+          <div key={item.id} className="card" onClick={() => handleOpenModal(index)}>
+          <div className="card_overlay">
+            <BsFillInfoCircleFill />
+          </div>
+          <div className="card_top" style={{backgroundImage: "url" + `(${item.poster})`}}>
             <div className="card_title">
-              <h1 className="title">Battle of the Bastard</h1>
-              <BsFillInfoCircleFill />
+              <h1 className="title">{item.title}</h1>
             </div>
           </div>
-          <div className="card_bottom">
+         {user && <div className="card_bottom">
             <div className="card_info">
-              <span>Genre</span>
-              <span>Director</span>
-              <span>Year</span>
+              <ul>
+                <li>{item.genre}</li>
+                <li>{item.director}</li>
+                <li>{item.year}</li>
+              </ul>
             </div>
-          </div>
+          </div>}
         </div>
-        <div className="card">
-          <h1>Title</h1>
-        </div>
-        <div className="card">
-          <h1>Title</h1>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis
-            amet aspernatur nisi! A, obcaecati amet! Eius, maxime enim. Sed,
-            accusamus.
-          </p>
-        </div>
-        <div className="card">
-          <h1>Title</h1>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis
-            amet aspernatur nisi! A, obcaecati amet! Eius, maxime enim. Sed,
-            accusamus.
-          </p>
-        </div>
-        <div className="card">
-          <h1>Title</h1>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis
-            amet aspernatur nisi! A, obcaecati amet! Eius, maxime enim. Sed,
-            accusamus.
-          </p>
-        </div>
-        <div className="card">
-          <h1>Title</h1>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis
-            amet aspernatur nisi! A, obcaecati amet! Eius, maxime enim. Sed,
-            accusamus.
-          </p>
-        </div>
-        <div className="card">
-          <h1>Title</h1>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis
-            amet aspernatur nisi! A, obcaecati amet! Eius, maxime enim. Sed,
-            accusamus.
-          </p>
-        </div>
-        <div className="card">
-          <h1>Title</h1>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis
-            amet aspernatur nisi! A, obcaecati amet! Eius, maxime enim. Sed,
-            accusamus.
-          </p>
-        </div>
+        ))}
       </div>
     </center>
   );
