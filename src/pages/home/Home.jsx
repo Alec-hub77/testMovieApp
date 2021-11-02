@@ -1,6 +1,6 @@
 import React from 'react'
 import './home.scss'
-import { MovieCard, Header } from '../../components'
+import { MovieCard, Header, MovieModal } from '../../components'
 
 const Home = () => {
     
@@ -8,8 +8,9 @@ const Home = () => {
 
     return (
         <div className="home">
-            <Header/>
-            <MovieCard/>
+            {/* <Header/> */}
+            {/* <MovieCard/> */}
+            <MovieModal/>
         </div>
     )
 }

@@ -1,3 +1,6 @@
+@import '../../scss/variables';
+@import '../../scss/breakpoint';
+
 .card_container {
   background: url("../../img/body-bg.gif");
   width: 100%;
@@ -9,19 +12,53 @@
     width: 65%;
     flex-wrap: wrap;
     .card {
-      width: 500px;
-      height: 600px;
+      position: relative;
+      width: 40%;
+      height: 420px;
       margin: 0 10px;
       margin-top: 100px;
       border-radius: 5px;
       display: flex;
       flex-direction: column;
       overflow: hidden;
+      flex-wrap: nowrap;
+
+      &:hover .card_overlay {
+        visibility: visible;
+      }
+
+      .card_overlay {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.3 ease;
+        visibility: hidden;
+
+        svg {
+          font-size: 72px;
+          color: #808080;
+        }
+      }
+
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.3);
+      }
 
       .card_top {
         display: flex;
         width: 100%;
         background-color: teal;
+        height: 400px;
+        align-items: start;
+        background: url('https://m.media-amazon.com/images/M/MV5BZDFiZTNiMmItMDk5ZC00OGZmLTk3NmItODM5ZWE2YWMzZjliXkEyXkFqcGdeQXVyOTMyOTQyNzA@._V1_SX300.jpg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
 
         .card_title {
           display: flex;
@@ -29,6 +66,7 @@
           align-items: center;
           width: 100%;
           padding: 5px;
+          color: #fff;
 
           .title {
             flex: 8;
@@ -38,6 +76,12 @@
             font-size: 32px;
             cursor: pointer;
             flex: 1;
+            color: #000;
+            
+
+            &:hover {
+              transform: scale(1.2);
+            }
           }
         }
       }
@@ -45,6 +89,24 @@
       .card_bottom {
         background-color: #fff;
         border-radius: 0 0 5px 5px;
+        background-color: #808080;
+
+        .card_info {
+          display: flex;
+          justify-content: space-evenly;
+          align-items: center;
+          
+
+          span {
+            flex: 1;
+          }
+
+          span:not(:last-child) {
+            border-right: 2px solid #000;
+            text-align: center;
+            padding-right: 10px;
+          }
+        }
       }
     }
   }

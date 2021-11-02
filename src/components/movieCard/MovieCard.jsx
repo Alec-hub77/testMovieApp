@@ -7,6 +7,21 @@ const MovieCard = () => {
     <center className="card_container">
       <div className="card_wrapper">
         <div className="card">
+          <div className="card_overlay"><BsFillInfoCircleFill /></div>
+          <div className="card_top">
+            <div className="card_title">
+              <h1 className="title">Battle of the Bastard</h1>
+            </div>
+          </div>
+          <div className="card_bottom">
+            <div className="card_info">
+              <span>Genre</span>
+              <span>Director</span>
+              <span>Year</span>
+            </div>
+          </div>
+        </div>
+        <div className="card">
           <div className="card_top">
             <div className="card_title">
               <h1 className="title">Battle of the Bastard</h1>
