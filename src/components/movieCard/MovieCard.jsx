@@ -14,7 +14,6 @@ const MovieCard = ({ data }) => {
     handleOpen(true)
     setModalMovieData(data[index])
   }
-  console.log(user)
   return (
     <center className="card_container">
       <div className="card_wrapper">
