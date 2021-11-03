@@ -1,5 +1,5 @@
-@import "../../scss/variables";
-@import "../../scss/breakpoint";
+@import '../../scss/variables';
+@import '../../scss/breakpoint';
 
 .banner {
   height: 100vh;
@@ -56,7 +56,7 @@
       color: #fff;
       font-weight: 600;
       font-size: 18px;
-      font-family: "Montserrat", sans-serif;
+      font-family: 'Montserrat', sans-serif;
       text-transform: uppercase;
       cursor: pointer;
       border-radius: 5px;
@@ -119,4 +119,10 @@
       }
     }
   }
+}
+.swiper-pagination-bullet {
+  background: white !important;
+}
+.swiper-pagination-bullet-active {
+  background: red !important;
 }

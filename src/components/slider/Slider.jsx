@@ -3,12 +3,12 @@ import "./slider.scss";
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Autoplay } from "swiper";
+import SwiperCore, { Pagination, Autoplay } from "swiper";
 import "swiper/swiper.min.css";
 import "swiper/swiper-bundle.min.css";
 import "swiper/components/pagination/pagination.min.css";
 
-
+SwiperCore.use([Pagination, Autoplay])
 
 const Slider = () => {
   const [sliderData, setSliderData] = React.useState([])
@@ -16,15 +16,14 @@ const Slider = () => {
   React.useEffect(() => {
     axios.get('http://localhost:3000/dummyData.json').then(res => setSliderData(res.data))
   }, [])
- 
+  
   return (
     <div className="slider">
       <Swiper
-        modules={[Pagination, Autoplay]}
         spaceBetween={0}
         slidesPerView={1}
         autoplay={{ enabled: true ,delay: 3000 }}
-        pagination={{ clickable: true, dynamicBullets: true, }}
+        pagination={{ clickable: true}}
         onSlideChange={() => console.log("slide change")}
         onSwiper={(swiper) => console.log(swiper)}
       >
