@@ -1,7 +1,6 @@
 import React from 'react';
 import './movieCard.scss';
 import { BsFillInfoCircleFill } from 'react-icons/bs';
-import MovieModal from '../movieModal/MovieModal';
 import ModalInfo from '../movieModal/ModalInfo'
 
 const MovieCard = ({ data }) => {

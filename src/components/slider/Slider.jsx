@@ -24,7 +24,6 @@ const Slider = () => {
         spaceBetween={0}
         slidesPerView={1}
         autoplay={{ enabled: true ,delay: 3000 }}
-        pagination={true}
         pagination={{ clickable: true, dynamicBullets: true, }}
         onSlideChange={() => console.log("slide change")}
         onSwiper={(swiper) => console.log(swiper)}
