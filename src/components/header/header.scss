@@ -66,3 +66,18 @@
     }
   }
 }
+
+@include mobile {
+  .header {
+    position: static;
+    margin-bottom: 50px;
+
+    .container {
+      flex-direction: column;
+
+      .left {
+        flex-direction: column;
+      }
+    }
+  }
+}

@@ -92,3 +92,12 @@
     }
   }
 }
+
+@include mobile {
+  .card_container {
+
+    .card_wrapper { 
+      width: 85%;
+    }
+  }
+}

@@ -1,3 +1,5 @@
+@import '../../scss/breakpoint';
+
 .movie_modal {
   width: 730px;
   height: 500px;
@@ -128,5 +130,21 @@
       .video_cast {
           font-weight: 600;
       }
+  }
+}
+
+
+@include mobile {
+  .movie_modal {
+    width: 90%;
+    top: -30%;
+
+    .movie_modal_top {
+      flex-wrap: wrap;
+
+      .poster {
+        margin-bottom: 5px;
+      }
+    }
   }
 }
