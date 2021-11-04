@@ -1,0 +1,107 @@
+@import '../../scss/variables';
+@import '../../scss/breakpoint';
+
+.register {
+  width: 100vw;
+  height: 100vh;
+  background-image: url('../../img/footer-bg.jpg');
+  background-size: cover;
+  position: relative;
+
+  .container {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: #fff;
+
+    form {
+      width: 365px;
+      min-height: 380px;
+      padding: 30px;
+      border-radius: 5px;
+      background-color: #000;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      -webkit-box-shadow: 0px 0px 11px 12px rgba(221, 0, 0, 0.4);
+      -moz-box-shadow: 0px 0px 11px 12px rgba(221, 0, 0, 0.4);
+      box-shadow: 0px 0px 11px 12px rgba(221, 0, 0, 0.4);
+      position: relative;
+
+      .PasswordChecklist {
+        font-size: 12px;
+        margin-top: 10px;
+
+        span {
+          margin: 3px;
+        }
+      }
+
+      input {
+        height: 40px;
+        border-radius: 5px;
+        background-color: lightgray;
+        padding-left: 10px;
+        margin: 5px 0;
+      }
+
+      .loginBtn {
+        height: 40px;
+        border-radius: 5px;
+        background: $netflix-red-color;
+        border: none;
+        font-size: 18px;
+        font-weight: 500;
+        cursor: pointer;
+        margin-top: 10px;
+
+        &:active {
+          transform: translateY(1px);
+        }
+      }
+
+      span {
+        color: lightgray;
+        margin: 10px 0;
+
+        b {
+          color: #fff;
+          &:hover {
+            color: $netflix-red-color;
+          }
+        }
+      }
+
+      .goBack {
+        display: flex;
+        align-items: center;
+        width: 30%;
+
+        svg {
+          margin-right: 5px;
+        }
+      }
+
+      @include mobile {
+
+        .PasswordChecklist {
+          display: none;
+        }
+      }
+
+      @include mobile-landscape {
+
+        .PasswordChecklist {
+          display: none;
+        }
+      }
+
+    }
+  }
+}

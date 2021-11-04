@@ -1,0 +1,150 @@
+@import '../../scss/breakpoint';
+
+.movie_modal {
+  width: 730px;
+  height: 500px;
+  background-color: #fff;
+  margin: auto;
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translate(-50%, 50%);
+  z-index: 99;
+  
+
+  .movie_modal_top {
+    display: flex;
+    align-items: flex-end;
+    background-color: #b3b3b3;
+    padding: 10px;
+    position: relative;
+
+    .close_btn {
+        position: absolute;
+        top: 3px;
+        right: 5px;
+        font-size:35px;
+        cursor: pointer;
+    }
+    .poster {
+      margin-right: 20px;
+      height: 200px;
+      img {
+        width: 140px;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 3px;
+      }
+    }
+
+    .watch_btn {
+      margin-right: 20px;
+      button {
+        width: 150px;
+        height: 45px;
+        font-size: 18px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #fc3030;
+        border: none;
+        color: #fff;
+        font-weight: 500;
+        cursor: pointer;
+        border-radius: 5px;
+
+        &:hover {
+          background-color: darken(#fc3030, 15);
+        }
+
+        svg {
+          font-size: 24px;
+        }
+      }
+    }
+
+    .rate_btn {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-right: 20px;
+        cursor: pointer;
+
+        svg {
+            font-size: 24px;
+        }
+
+        span {
+            font-size: 12px;
+        }
+
+        &.like:hover {
+            color: green;
+        }
+        &.dislike:hover {
+            color: red;
+        }
+    }
+  }
+
+  .movie_modal_bottom {
+      padding: 10px;
+      text-align: left;
+
+      .video_info {
+          margin-bottom: 20px;
+
+        .info_year {
+            font-weight: 700;
+            margin-right: 10px;
+        }
+
+        .info_genre {
+            font-weight: 500;
+            margin-right: 20px;
+        }
+
+        .info_country {
+            font-weight: 700;
+        }
+      }
+
+      .video-extra {
+        color: #808080;
+        margin-bottom: 30px;
+        .video_quality {
+            font-size: 12px;
+            border: 1px solid #808080;
+            border-radius: 3px;
+            padding: 3px;
+            margin-right: 20px;
+        }
+        .video_duration {
+            font-weight: 600;
+        }
+      }
+
+      .video_description {
+          margin-bottom: 30px;
+      }
+      .video_cast {
+          font-weight: 600;
+      }
+  }
+}
+
+
+@include mobile {
+  .movie_modal {
+    width: 90%;
+    top: -30%;
+
+    .movie_modal_top {
+      flex-wrap: wrap;
+
+      .poster {
+        margin-bottom: 5px;
+      }
+    }
+  }
+}
