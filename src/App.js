@@ -7,7 +7,7 @@ function App() {
   const user = JSON.parse(localStorage.getItem('user'))
   return (
     <div className="App">
-      <BrowserRouter>
+      <BrowserRouter basename={window.location.pathname || ''}>
         <Switch> 
           <Route path="/" exact>
           { user ? <Redirect to="/home"/> : <Welcome/>}
