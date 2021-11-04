@@ -24,8 +24,6 @@ const Slider = () => {
         slidesPerView={1}
         autoplay={{ enabled: true ,delay: 3000 }}
         pagination={{ clickable: true}}
-        onSlideChange={() => console.log("slide change")}
-        onSwiper={(swiper) => console.log(swiper)}
       >
         {sliderData.map(slider => (
           <SwiperSlide key={slider.id}>
