@@ -1,5 +1,5 @@
 import "./App.scss";
-import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
+import { HashRouter, Switch, Route, Redirect } from "react-router-dom";
 import { Welcome, Home, Login, Register } from "./pages";
 
 function App() {
@@ -7,7 +7,7 @@ function App() {
   const user = JSON.parse(localStorage.getItem('user'))
   return (
     <div className="App">
-      <BrowserRouter>
+      <HashRouter>
         <Switch> 
           <Route path="/" exact>
           { user ? <Redirect to="/home"/> : <Welcome/>}
@@ -22,7 +22,7 @@ function App() {
             <Register />
           </Route>
         </Switch>
-      </BrowserRouter>
+      </HashRouter>
     </div>
   );
 }
