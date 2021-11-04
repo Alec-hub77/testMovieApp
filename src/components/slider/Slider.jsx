@@ -7,14 +7,16 @@ import SwiperCore, { Pagination, Autoplay } from "swiper";
 import "swiper/swiper.min.css";
 import "swiper/swiper-bundle.min.css";
 import "swiper/components/pagination/pagination.min.css";
+import dymmyData from '../../dummyData.json'
 
 SwiperCore.use([Pagination, Autoplay])
 
 const Slider = () => {
   const [sliderData, setSliderData] = React.useState([])
-
+    console.log(sliderData)
   React.useEffect(() => {
-    axios.get('http://localhost:3000/dummyData.json').then(res => setSliderData(res.data))
+    // axios.get('http://localhost:3000/dummyData.json').then(res => setSliderData(res.data))
+    setSliderData(dymmyData)
   }, [])
   
   return (

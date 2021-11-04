@@ -2,16 +2,17 @@ import React from 'react';
 import './home.scss';
 import { MovieCard, Header } from '../../components';
 import axios from 'axios';
+import imdbFile from '../../imdb.json'
 
 const Home = () => {
   const [movieData, setMovieData] = React.useState([]);
   const [cardPortion, setCardPortion] = React.useState(20);
-
+  
   React.useEffect(() => {
     const getData = async () => {
       try {
-        const res = await axios.get('http://localhost:3000/imdb.json');
-        let slicedData = res.data.slice(
+        // const res = await axios.get('http://localhost:3000/imdb.json');
+        let slicedData = imdbFile.slice(
           `${cardPortion - 20}`,
           `${cardPortion}`
         );
